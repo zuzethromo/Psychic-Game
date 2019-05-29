@@ -37,15 +37,15 @@
             let computerGuess = options[Math.floor(Math.random()*options.length)];
             console.log(computerGuess);
 
-        if ((userguess==computerGuess)) {
+        if ((userguess===computerGuess)) {
             wins++;
         }
         else { 
             losses++;
         }
 
-        if ((userguess==options)) {
-            guessesLeft++;
+        if (userguess) {
+            guessesLeft--;
         }
 
         let html = 
