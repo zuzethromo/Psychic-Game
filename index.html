@@ -45,7 +45,7 @@
         }
 
         if (userguess) {
-            guessesLeft--;
+        guessesLeft--;
         }
 
         let html = 
@@ -53,8 +53,8 @@
             "<p>Guess what letter I'm thinking of</p>" +
             "<p>Wins: " + wins + "</p>" +
             "<p>Losses: " + losses + "</p>" +
-            "<p>Guesses Left: " + guessesLeft + "</p>" +
-            "<p>Your guesses so far: " + options + "</p>"
+            "<p>Guesses Left: " + guessesLeft + "</p>" + 
+            "<p>Your guesses so far: " + userguess + "</p>"
 
         document.querySelector('#game').innerHTML = html;
 
