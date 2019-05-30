@@ -26,8 +26,8 @@
         let options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
         let wins = 0;
         let losses = 0;
-        let guessesLeft = 9;
-        let guessesSoFar = options;
+        let guessesLeft = 9
+        let guessesSoFar = [];
 
         document.onkeyup = function() {
 
@@ -35,18 +35,33 @@
             console.log(userguess);
 
             let computerGuess = options[Math.floor(Math.random()*options.length)];
-            console.log(computerGuess);
+            console.log(computerGuess); 
+
+            let restart = function() {
+                guessesLeft = 9;
+                guessesSoFar = [];
+            }
+
+// for (let i = 9; i > -1; i--) {
+
+        if ((userguess)) {
+            guessesLeft--;
+        }
 
         if ((userguess===computerGuess)) {
             wins++;
+            guessesLeft = 9;
+            guessesSoFar = [];
+            restart();
         }
-        else { 
+        if ((guessesLeft === 0)) { 
             losses++;
+            guessesLeft = 9;
+            guessesSoFar = [];
+            restart();
         }
-
-        if (userguess) {
-        guessesLeft--;
-        }
+    
+// }   
 
         let html = 
             "<h1>The Psychic Game</h1>" +
@@ -59,6 +74,7 @@
         document.querySelector('#game').innerHTML = html;
 
         }
+
 
     </script>
     
